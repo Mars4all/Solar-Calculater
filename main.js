@@ -18,7 +18,7 @@ $(document).ready(function() {
         let kostenkwh = 0.35;
         let rechnet = Math.floor(kosten / (kostenkwh * KWH));
         $("#div16").html("Sie benötigen ca. " + Module + " Module. <br> Ihre kosten belaufen sich auf "+ kosten+
-        " Euro Material <br> Das System wird sich nach "+ rechnet+ " Jahren rechnen");
+        " Euro Material. <br> Das System wird sich nach "+ rechnet+ " Jahren rechnen.");
         $("#div16").show();
 	});
 
