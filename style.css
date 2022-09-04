@@ -37,9 +37,7 @@ footer {
      width: 100%;
   }
 
-/* hier sind die Media Queries*/
-@media only screen and (max-width: 600px) {
-	body {
-	  background-color: rgb(165, 206, 51);
-	}
-  }
+.hochladen{
+	left: 25%;
+	width: 50%;
+}
