@@ -76,6 +76,12 @@ label{
 	align-items: center;
 }
 
+#b.berechnen{
+	display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
 
 
 
