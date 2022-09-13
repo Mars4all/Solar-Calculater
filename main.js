@@ -175,7 +175,7 @@ $(document).ready(function() {
  });
 
  $(".versenden_daten_Anbieter").mouseup(function() {
-        alert("Ihre Daten wurden erfolgreich zum Anbieter versendet und wird sich zeitnah mit Ihnen in Verbindung setzen");
+        alert("Ihre Daten wurden erfolgreich zum Anbieter versendet und er wird sich zeitnah mit Ihnen in Verbindung setzen");
 
  });
 
