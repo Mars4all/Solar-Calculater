@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     let modul_400w = 400;
-    let kosten_modul_400w = 249;
+    let kosten_modul_400w = 249; // Quelle : ebay.de
   
     $("#table0").hide();
     $("#table30").hide();
