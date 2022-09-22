@@ -90,24 +90,59 @@
 		</div>
 	
 		<a class="btn btn-success mt-3" href="#" role="button" id ="button_Daten_uebernehmen">Daten Übernehmen</a>
-
-			
+		<button onclick="getLocation()" class="btn btn-secondary mt-3 " >Meine Position finden</button>
+		
+		<p id="demo"></p>
 
 		<a class="btn btn-primary mt-3" href="../Berechnung.html" role="button" id ="button_Daten_uebernehmen2" style="left:10px">zur Berechnung</a>
 	</div>	
 
 		<div id="map" class="map mt-3 center" style="width: 80%; height: 80%;"></div>
+		
+	<script>
 
+	</script>
 	
 	<script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
 	<script src="leaflet-providers.js"></script>
+
+
+
+	<!--Geodaten übernehmen-->
+	
+
+<div id = "Karteausblenden">
 	<script>
-		var map = L.map('map', {
-			center: [52, 10],
-			zoom: 5,
+		 let PosLat = 52;
+        let Poslong = 10;
+        let zoom = 5;
+
+       var x = document.getElementById("demo");
+
+       function getLocation() {
+       if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+       } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+       }
+       }
+
+       function showPosition(position) {
+       x.innerHTML = "Latitude: " + position.coords.latitude + 
+       "<br>Longitude: " + position.coords.longitude;
+       PosLat = position.coords.latitude;
+	   Poslong = position.coords.longitude;
+	   zoom = 25;
+
+	  //////////////////// von hier Karte laden////////////////
+
+	  var map = L.map('map', {
+			center: [PosLat, Poslong],
+			zoom: zoom,
 			zoomControl: false
 		});
 
+		
 		var defaultLayer = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
 
 		
@@ -120,6 +155,7 @@
 			'OpenWeatherMap PrecipitationClassic': L.tileLayer.provider('OpenWeatherMap.PrecipitationClassic'),
 			'OpenWeatherMap Rain': L.tileLayer.provider('OpenWeatherMap.Rain'),
 			'OpenWeatherMap RainClassic': L.tileLayer.provider('OpenWeatherMap.RainClassic'),
+		
 			'OpenWeatherMap Pressure': L.tileLayer.provider('OpenWeatherMap.Pressure'),
 			'OpenWeatherMap PressureContour': L.tileLayer.provider('OpenWeatherMap.PressureContour'),
 			'OpenWeatherMap Wind': L.tileLayer.provider('OpenWeatherMap.Wind'),
@@ -146,7 +182,16 @@
 		}
 		map.on('resize', resizeLayerControl);
 		resizeLayerControl();
-	</script>
+	
+		///////////////Maker//////////////////////////7
+	
+	}
+</script>
+
+
+<!--////////////////////bis hier Karte laden//////////-->
+
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="../main.js"></script>
