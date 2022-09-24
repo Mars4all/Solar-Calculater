@@ -82,27 +82,26 @@
 	
 		<div class="input-group mb-3 mt-3">
 	
-			<input type="text" id ="street" class="form-control" placeholder="Strasse" aria-label="Username">
+			<input type="text" id ="street" class="form-control" placeholder="Strasse" aria-label="Username" >
 			
 			<input type="text" id="number" class="form-control" placeholder="Hausnummer" aria-label="Server">
 	
 			
 		</div>
-		<div class="row">
-			<div class="col">
-				<a class="btn btn-success mt-3" href="#" role="button" id ="button_Daten_uebernehmen">Daten Übernehmen</a>
-			</div>
-			<div class="col">
-				<button onclick="getLocation()" class="btn btn-secondary mt-3 " >Position finden</button>
-			</div>
-			<div class="col">
-				<a class="btn btn-primary mt-3" href="../Berechnung.html" role="button" id ="button_Daten_uebernehmen2" style="left:10px">zur Berechnung</a>
-			</div>	
-				<p id="demo"></p>
-
-				
-		</div>
+				<div class="row">
+					<div class="col">
+					<a class="btn btn-success mt-3" href="#" role="button" id ="button_Daten_uebernehmen">Daten übernehmen</a>
+				    </div>
+					<div class="col">
+					<button onclick="getLocation()" class="btn btn-secondary mt-3 " >Meine Position finden</button>
+					</div>
+					<div class="col">
+						<a class="btn btn-primary mt-3" href="../Berechnung.html" role="button" id ="button_Daten_uebernehmen2" style="left:10px">zur Berechnung</a>
+					</div>	
+				</div>
 		</div>	
+		<p id="demo"></p>
+
 
 		<div id="map" class="map mt-3 center" style="width: 80%; height: 80%;"></div>
 		
@@ -129,14 +128,13 @@
        function getLocation() {
        if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(showPosition);
+			 
        } else { 
               x.innerHTML = "Geolocation is not supported by this browser.";
        }
        }
 
        function showPosition(position) {
-       x.innerHTML = "Latitude: " + position.coords.latitude + 
-       "<br>Longitude: " + position.coords.longitude;
        PosLat = position.coords.latitude;
 	   Poslong = position.coords.longitude;
 	   zoom = 25;
@@ -149,7 +147,13 @@
 			zoomControl: false
 		});
 
-		
+		 ///////////////Maker//////////////////////////7
+		 var marker = L.marker([PosLat,Poslong ]).addTo(map)
+		 var popup = marker.bindPopup('<b>Dein Standort</b><br />Drücken Sie auf Daten übernehmen.');
+		 popup.openPopup();
+
+
+
 		var defaultLayer = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
 
 		
@@ -190,8 +194,7 @@
 		map.on('resize', resizeLayerControl);
 		resizeLayerControl();
 	
-		///////////////Maker//////////////////////////7
-	
+		
 	}
 </script>
 
