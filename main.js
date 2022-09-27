@@ -203,13 +203,18 @@ $(document).ready(function() {
  // Hier die Lgig der Datenübernahme der Karte
  $("#button_Daten_uebernehmen").mouseup(function() {
         $("#button_Daten_uebernehmen2").show();
-
+      
  });
 
  $(".versenden_daten_Anbieter").mouseup(function() {
-        alert("Ihre Daten wurden erfolgreich zum Anbieter versendet und er wird sich zeitnah mit Ihnen in Verbindung setzen");
+        alert("Ihre Daten werden zum Anbieter versendet, sobald Sie sich angemeldet haben.");
 
  });
+
+ $(".zum_Anbieter_ohne_Anmeldung").mouseup(function() {
+       alert("Jetzt werden Sie zum Anbieter weitergeleitet");
+
+});
 
 
 });
