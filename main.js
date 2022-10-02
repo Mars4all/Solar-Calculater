@@ -212,7 +212,7 @@ $(document).ready(function() {
  });
 
  $(".zum_Anbieter_ohne_Anmeldung").mouseup(function() {
-       alert("Jetzt werden Sie zum Anbieter weitergeleitet");
+       alert("Jetzt werden Sie zum Anbieter weitergeleitet.");
 
 });
 
