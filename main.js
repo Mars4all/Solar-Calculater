@@ -207,7 +207,7 @@ $(document).ready(function() {
  });
 
  $(".versenden_daten_Anbieter").mouseup(function() {
-        alert("Ihre Daten werden zum Anbieter versendet, sobald Sie sich angemeldet haben.");
+        alert("Ihre Daten werden zum Anbieter versendet, er wird sich schnellstmöglichst bei Ihnen melden.");
 
  });
 
