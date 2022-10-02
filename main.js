@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 
         // Berechnung mit einer Neigung von 60%
-        let Anzahl_400w_module_0_Grad = Math.round((Tagesverbrauch /((min_Tagesleistung)/ 1000) *0.87));
+        let Anzahl_400w_module_0_Grad = Math.round((Tagesverbrauch /((min_Tagesleistung)/ 1000) /0.87));
         
 
         // Berechnung mit einer Neigung von 30%
