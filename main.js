@@ -1,7 +1,7 @@
 $(document).ready(function() {
     let modul_400w = 400;
     let kosten_modul_400w = 249; //Quelle Ebay.de
-    let kostengesamt_in_Euro = (modul_400w * 2,5)*1500;
+    let kostengesamt_in_Euro = (modul_400w * 2,5)*1500; // Quelle ( die Formel ist unten seperat benutzt worden) : https://www.solaranlagen-portal.de/photovoltaik/preis-solar-kosten.html
   
     $("#table0").hide();
     $("#table30").hide();
